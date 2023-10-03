@@ -1,7 +1,7 @@
 # Python Program to Create a Class which Performs Basic Calculator Operations
+# write your code here
 class Hcalc:
     memory = 0.0
-    counter = 1
     msg_0 = 'Enter an equation'
     msg_1 = 'Do you even know what numbers are? Stay focused!'
     msg_2 = "Yes ... an interesting math operation. You've slept through all classes, haven't you?"
@@ -19,28 +19,23 @@ class Hcalc:
         self.operator = operator
         self.y = y
 
-    def x_y_check(self):
-        if Hcalc.counter == 1:
-            if self.operator == "/" and (self.y == 0 or self.y.isalpha()):
-                print(Hcalc.msg_3)
-                return True
-            elif self.x.replace(".", "").isnumeric() is not True or self.y.replace(".", "").isnumeric() is not True:
-                print(f'{Hcalc.msg_1}')
-                return True
-            else:
-                Hcalc.counter += 1
-                return False
-        if Hcalc.counter > 1:
-            if self.x.replace(".", "").isnumeric() is not True:
-                self.x = self.memory
-            if self.y.replace(".", "").isnumeric() is not True:
-                self.y = self.memory
+    def check(self):
+        if self.x == 'M':
+            self.x = self.memory
+        if self.y == 'M':
+            self.y = self.memory
 
-    def operator_check(self):
-        if self.operator not in ('+', '-', '/', '*'):
-            return True
-        else:
+        try:
+            float(self.x)
+            float(self.y)
             return False
+        except ValueError:
+            print(Hcalc.msg_1)
+            return True
+        finally:
+            if self.operator not in Hcalc.operations:
+                print(Hcalc.msg_2)
+                return True
 
     def store_continue(self):
         store = input(Hcalc.msg_4)
@@ -59,11 +54,7 @@ class Hcalc:
                 return False
 
     def control_func(self):
-        if Hcalc.x_y_check(self) is True:
-            return True
-
-        if Hcalc.operator_check(self) is True:
-            print(Hcalc.msg_2)
+        if Hcalc.check(self) is True:
             return True
 
         self.x = float(self.x)
