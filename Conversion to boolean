@@ -1,0 +1,37 @@
+
+#  Conversion to boolean
+
+
+#  Functions should check if the fraction equals 0.5.
+#  The function should print True or False.
+#  If the denominator equals 0, the answer is False.
+def compare(numerator, denominator):
+    return bool(denominator) and numerator / denominator == 0.5
+
+
+a = int(input())
+b = int(input())
+
+print(compare(a, b))
+
+#  function that takes a string name as an argument and prints "Hello, NAME!" where NAME is replaced by the user's name.
+#  However, some users might want not to disclose their name so name can equal the empty string.
+#  In this case, your program should print "Hello, Anonymous!".
+def say_hello(name):
+    if bool(name) is True:
+        print(f'Hello, {name}!')
+    else:
+        print('Hello, Anonymous!')
+
+
+say_hello(input())
+
+#  Function that returns false if the boolean values are equal else returns the truthy operand.
+def xor(a, b):
+    if bool(a) == bool(b):
+        return False
+    else:
+        return a or b
+
+
+print(xor(0, 4))
