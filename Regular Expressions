@@ -1,0 +1,33 @@
+#  Simple function demonstrating regular expressions using re
+import re
+
+#  Small program that checks if the words match or not. If they do match,
+#  the program prints the doubled length of the word from the input,
+#  and if they don't, it prints the string "no matching".
+w1 = input()
+w2 = input()
+if re.match(w1, w2):
+    print(len(w1) * 2)
+else:
+    print('no matching')
+
+
+#  This is designed to match with the text 'Mr Smith', 'Mr. Smith', 'Ms Smith', 'Ms. Smith'
+#  but be able to filter out the text 'Mrs Smith'.
+
+import re
+
+
+word = input()
+print(re.match(r"M[rs]\.? Smith", word))
+
+
+#  Program that will match hyphenated words, such as: twenty-one, long-term, co-worker....
+
+# your code here
+word = input()
+match = re.match('[a-z]+-[a-z]+', word)
+if match == None:
+    print(False)
+else:
+    print(True)
