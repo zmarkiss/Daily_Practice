@@ -1,0 +1,9 @@
+# Shorthands
+
+# Print True if 'the' is a definitive article else False for strings like 'weather' or 'they'
+import re
+
+
+count = 0
+word = input()
+print(bool(re.match(r'^the$', word)))
