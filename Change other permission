@@ -1,0 +1,11 @@
+# Change other permission
+
+#  Imagine you have a project file called /tmp/program.py.
+#  Your task is to make this file executable for other users without overriding previous permissions.
+#  Use the chmod command and symbolic mode to do the task.
+
+
+solve() {
+    # add your solution here
+    chmod o+x /tmp/program.py
+}
