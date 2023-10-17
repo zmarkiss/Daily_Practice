@@ -1,0 +1,23 @@
+#  Class PiggyBank, method add_money
+# This program demonstrates an old school piggy bank with one quirk
+#  The change is always converted to dollars when greater than 99
+
+
+class PiggyBank:
+    def __init__(self, dollars, cents):
+        self.dollars = dollars
+        self.cents = cents
+
+    def add_money(self, deposit_dollars, deposit_cents):
+        self.dollars += deposit_dollars
+        self.cents += deposit_cents
+        if self.cents < 100:
+            pass
+        else:
+            self.dollars += self.cents // 100
+            self.cents = self.cents % 100
+
+
+piggy = PiggyBank(1, 1)
+piggy.add_money(500, 500)
+print(piggy.dollars, piggy.cents)
