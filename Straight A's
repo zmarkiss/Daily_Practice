@@ -1,0 +1,11 @@
+#  Straight A's
+
+#  Write a program that calculates the proportion of students who received grade A.
+#  Input format: A string with students' marks separated by space. At least one mark will be present.
+#  Output format: A fractional number with exactly two decimal places.
+#  To format the decimal places use the round(number, places) function
+
+string_ = input()
+list_ = [i for i in string_ if i != ' ']
+a_ = [i for i in string_ if i == 'A']
+print(round(len(a_) / len(list_), 2))
