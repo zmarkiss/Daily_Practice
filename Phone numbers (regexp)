@@ -1,0 +1,17 @@
+#  Phone numbers
+#  write a program that will take a string as an input and match the phone numbers
+
+
+import re
+
+
+string = input()
+template = r'\+(\d) ?-?(\d\d\d) ?-?(\d\d\d ?-?\d\d ?-?\d\d)'
+result = re.search(template, string)
+if result is None:
+    print('No match')
+else:
+    print(f'Full number: {result[0]}')
+    print(f'Country code: {result[1]}')
+    print(f'Area code: {result[2]}')
+    print(f'Number: {result[3]}')
