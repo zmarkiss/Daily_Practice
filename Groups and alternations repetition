@@ -1,0 +1,23 @@
+#  Groups and alternations repetition
+#  Now, consider a template for a string containing a date. Let's agree to accept the following formats of date:
+#  D(D)/M(M)/YYYY or D(D).M(M).YYYY
+#  DD and MM can consist either of two or one digits, YYYY is always a four-digit expression.
+#  The digits should be separated either by a slash character / or by a dot.
+#  One date can contain only slashes or only dots as separators.
+
+
+import re
+
+
+#  put your regex in the variable template
+template = r'(^([0-9]{1,2})(\.)([0-9]{1,2})(\.)([0-9]{4}$))|(^([0-9]{1,2})(\/)([0-9]{1,2})(\/)([0-9]{4}$))'
+string = input()
+#  compare the string and the template
+result = re.search(template, string)
+if result is None:
+    print(None)
+else:
+    if result[6] is None:
+        print(result[12])
+    else:
+        print(result[6])
