@@ -1,0 +1,17 @@
+#  Advanced e-mail verification
+#  its first part can contain from 6 to 30 characters
+#  These characters can contain lowercase Latin letters (a-z),
+#  digits (0-9), hyphens -, dot characters . , equal signs = or underscores _
+#  THe @ extensions are @gmail.com, @jetbrains.org or @hyperskill.org
+#  valid e-mails: adminadmin@gmail.com, best_academy@jetbrains.org, whats-up@hyperskill.org
+#  invalid e-mails: mainadmin@gmail,com, EMAIL123@jetbrains.org, 12a@jetbrains.org, funny_cat@gmail.org
+
+
+import re
+
+
+template = r'([-=a-z0-9._]{5,30})@(gmail|jetbrains|hyperskill)\.(com|org|org)'
+string = input()
+match = re.search(template, string)
+print(match)
+print(match[1] if bool(match) else match)
