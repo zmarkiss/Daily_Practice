@@ -1,0 +1,10 @@
+#  Finding pets
+#  Compile a pattern called pets that matches the following pets: dog, cat, parrot, and hamster.
+#  Your pattern must be case-insensitive, so uppercase and lowercase characters must be treated equally
+
+import re
+
+
+pattern = re.compile('(dog|cat|parrot|hamster)', flags=re.I)
+results = pattern.findall(input())
+print(results)
