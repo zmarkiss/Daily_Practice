@@ -1,0 +1,12 @@
+#  Write a program that takes an input string that contains 
+#  weekly expenses and returns how much is spent for the week. 
+#  Pay attention to the input and output format in the example.
+#   Sample Input 1:  2 meals $20, groceries $120, 1 month rent $500
+#   Sample Output 1:  This week you have spent: 640 dollars
+
+
+import re
+
+result = re.findall(r'(?<=\$)\d?\d?\d', input())
+res = [eval(i) for i in result]
+print(f'This week you have spent: {sum(res)} dollars')
