@@ -1,0 +1,6 @@
+# Exracting names from strings with numbers bewteen the names.  For example, 'John2Mary365Jane56Michael' 
+
+import re       
+names = input()
+# your code here
+print(re.split(r'\d+', names))
